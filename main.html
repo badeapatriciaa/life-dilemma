@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Date Invitation</title>
+    <title>?Invitation?</title>
     <style>
         body {
             text-align: center;
@@ -23,16 +23,29 @@
 </head>
 <body>
     <h1>Will you take me on a date?</h1>
-    <button onclick="alert('Great! See you soon!')">Yes</button>
+    <button onclick="showYesGif()">Yes</button>
     <button onclick="showSpaghetti()">No</button>
     
     <div id="spaghetti-container" class="hidden">
-        <img src="https://media.giphy.com/media/3o7TKU8RvQuomFfUUU/giphy.gif" alt="Spaghetti Breaking">
+        <p>Wrong choice, now the spaghetti is broken!!</p>
+        <img src="https://media.giphy.com/media/xT1R9ZfqU3tiFvC6Wg/giphy.gif" alt="Spaghetti Breaking">
+    </div>
+
+    <div id="yes-container" class="hidden">
+        <img src="https://media.tenor.com/fiPAnsfgzC4AAAAC/italian-hand-fancy.gif" alt="Happy Italian Gesture">
     </div>
     
     <script>
         function showSpaghetti() {
+            document.querySelector('h1').style.display = 'none';
+            document.querySelectorAll('button').forEach(btn => btn.style.display = 'none');
             document.getElementById('spaghetti-container').classList.remove('hidden');
+        }
+
+        function showYesGif() {
+            document.querySelector('h1').style.display = 'none';
+            document.querySelectorAll('button').forEach(btn => btn.style.display = 'none');
+            document.getElementById('yes-container').classList.remove('hidden');
         }
     </script>
 </body>
